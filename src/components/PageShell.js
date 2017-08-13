@@ -10,7 +10,7 @@ const PageShell = Page => {
         transitionAppearTimeout={600}
         transitionEnterTimeout={600}
         transitionLeaveTimeout={200}
-        transitionName="slide"
+        transitionName={props.match.path === '/thanks' ? 'SlideIn' : 'SlideOut'}
       >
         <img src={logo} alt="" />
         <Page {...props} />
