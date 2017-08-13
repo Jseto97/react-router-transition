@@ -1,13 +1,21 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import logo from '../logo.svg';
 
-const PageShell = (Page) => {
-  return (props) => (
+const PageShell = Page => {
+  return props =>
     <div className="page">
-      <img src={logo} alt=""/>
-      <Page {...props}></Page>
-    </div>
-  );
-}
+      <ReactCSSTransitionGroup
+        transitionAppear={true}
+        transitionAppearTimeout={600}
+        transitionEnterTimeout={600}
+        transitionLeaveTimeout={200}
+        transitionName="slide"
+      >
+        <img src={logo} alt="" />
+        <Page {...props} />
+      </ReactCSSTransitionGroup>
+    </div>;
+};
 
 export default PageShell;
