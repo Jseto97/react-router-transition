@@ -7,7 +7,7 @@ class Subscribe extends Component {
         <h2>We don't mind keeping you posted!</h2>
         <p>Twice a week, we send in warm regards with rich contents from around the web. 
           These contents are carefully tailored to you! so yo won't worry about spam.</p>
-        <SubscribeForm />
+        <SubscribeForm {...this.props} />
       </div>
     )
   }

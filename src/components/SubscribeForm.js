@@ -1,17 +1,17 @@
 import React from 'react';
 
-const SubscribeForm = ({thanks, go}) => {
+const SubscribeForm = ({thanks, go, history}) => {
   if(!thanks) {
     return (
       <div className="form">
         <input type="text" placeholder="Enter email address" />
-        <button>Subscribe Now</button>
+        <button onClick={() => history.push('/thanks')}>Subscribe Now</button>
       </div>
     )
   } else {
     return (
       <div className="form">
-        <button>Try Again</button>
+        <button onClick={() => history.push('/')}>Try Again</button>
       </div>
     )
   }
